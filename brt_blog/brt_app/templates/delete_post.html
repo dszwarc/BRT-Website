@@ -6,6 +6,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
 <h1>Delete Post:</h1>
 
 <h3>Delete: {{post.title}}</h3>
@@ -17,4 +18,9 @@
         <button class="btn btn-primary">Confirm Delete</button>
     </form>
 </div>
+
+{% else %}
+Access Denied. User not loggged in.
+
+{% endif %}
 {% endblock content %}
